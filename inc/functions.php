@@ -52,10 +52,7 @@ function phone_number($number){
 // check if it exist
 function checkExist($exist, $value){
     
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "blog";
+ require_once "conn.php";
 
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
