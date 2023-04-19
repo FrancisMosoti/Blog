@@ -9,6 +9,7 @@ require("post/logic.php");
 require("upload.php");
 require("updateImg.php");
 require("test.php");
+require("inc/functions.php");
 
 ?>
 
@@ -120,7 +121,13 @@ Upload Profile photo:
 
             <!-- flex start -->
            <div class="d-flex flex-row">
-             <p class="text-success mx-3"><span class="text-dark">Posted on:</span> <?php echo $row['created_at'];?></p>
+             <p class="text-success mx-3"><span class="text-dark">Posted on:</span>
+                  <?php
+                  $timestamp = strtotime($row['created_at']);
+                  echo agoLogic($timestamp);
+                   
+                  ?>
+              </p>
             <p class="text-primary"><span class="text-dark">BY:</span> 
             <?php 
 
