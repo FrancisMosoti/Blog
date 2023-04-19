@@ -74,7 +74,6 @@ if (isset($_COOKIE['userid'])) {
  }
     
     // echo "no errors";
-    require_once "inc/conn.php";
     
     try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);

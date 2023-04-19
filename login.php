@@ -5,6 +5,7 @@ if(isset($_SESSION['user'])){
     header("location:home.php");
 }
 
+require_once "inc/conn.php";
 require("inc/functions.php");
 require("validateLOGIN.php");
 

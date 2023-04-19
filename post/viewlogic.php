@@ -1,9 +1,9 @@
 <?php
 
-require_once "../inc/conn.php";
+require_once "conn.php";
 
 	try {
-		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

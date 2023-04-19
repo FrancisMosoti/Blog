@@ -1,5 +1,7 @@
 <?php
 
+
+
 function CleanInput($input){
     return htmlspecialchars(trim($_POST[$input]));
 }
@@ -52,9 +54,13 @@ function phone_number($number){
 // check if it exist
 function checkExist($exist, $value){
     
- require_once "conn.php";
+    $servername = "localhost";
+    $username = "root";
+    $pass = "";
+    $dbname = "blog";
 
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
   // set the PDO error mode to exception
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

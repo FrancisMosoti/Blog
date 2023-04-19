@@ -1,9 +1,9 @@
 <?php
 
-require_once "../inc/conn.php";
+require "conn.php";
 
 	try {
-		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$statement = $conn->prepare("SELECT * FROM posts");
 		$statement->execute();
