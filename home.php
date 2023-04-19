@@ -20,6 +20,7 @@ require("inc/functions.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Home</title>
     <style>
@@ -121,7 +122,7 @@ Upload Profile photo:
 
             <!-- flex start -->
            <div class="d-flex flex-row">
-             <p class="text-success mx-3"><span class="text-dark">Posted on:</span>
+             <p class="text-success mx-3"><i class="fa fa-clock-o"></i>
                   <?php
                   $timestamp = strtotime($row['created_at']);
                   echo agoLogic($timestamp);
@@ -132,8 +133,11 @@ Upload Profile photo:
             <?php 
 
             foreach ($res as $value){
+              // echo $row['user_id']."---".$value['id']."<br>";
               if($row['user_id'] === $value['id']){
               echo $value['name'];
+            }else if($row['user_id'] === 0){
+              echo "Unknown";
             }
             
             }
@@ -142,11 +146,11 @@ Upload Profile photo:
 <!-- flex end -->
            </div>
 
-           <div class="d-flex flex-row m-2">
-                <a href="post/view.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-success">Read More &rarr;</a>
+           <div class="d-flex flex-row mx-2">
+                <a href="post/view.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-success">Read More</a>
                 <?php if($row['user_id'] === $_SESSION['user']['id']){?>
-                  <a href="post/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger">Delete &rarr;</a>
-                <a href="post/edit.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary">Edit &rarr;</a>
+                  <a href="post/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger">Delete</a>
+                <a href="post/edit.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary">Edit</a>
               <?php }?>
            </div>
 
