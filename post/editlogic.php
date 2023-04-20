@@ -7,20 +7,16 @@ function CleanInput($input){
 
 
 
-if($_SERVER["REQUEST_METHOD"] = "POST"){
+if($_SERVER["REQUEST_METHOD"] = "POST" && isset($_POST['Done'])){
 
 
-    if(!isset($_POST['title']) || empty($_POST['title'])){
-        if(!isset($_POST['content']) || empty($_POST['title'])){
+    if(!isset($_POST['tit']) || empty($_POST['tit']) && (!isset($_POST['cont']) || empty($_POST['cont'])) ){
             $empty = "ERROR! Can't add an empty post. Write something please.";
-        }
-
     }else{
-        $title = CleanInput('title');
-        $body = CleanInput('content');
+        $tit = CleanInput('tit');
+        $bod = CleanInput('cont');
     }
 
-if(empty($empty) && empty($success)){
 
 $servername = "localhost";
 $username = "root";
@@ -32,15 +28,18 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // echo checkEmail();
-    // prepare sql and bind parameters
         if(isset($_REQUEST['id'])){
             $id = $_REQUEST['id'];
-            $stat = $conn->prepare("UPDATE posts SET title=$title, body=$body WHERE id = $id");
-            $stat->execute();
 
-            echo $stat->rowCount() . " records UPDATED successfully";
+            $stat = $conn->prepare("UPDATE posts SET title='$tit', set body = '$bod' WHERE id = $id");
+            $stat->execute();
+            die('hapa');
+
+            
         }
+
+            header("location:../home.php?edit=editted");
+
 
 
 
@@ -49,7 +48,7 @@ try {
     $error = "FAILED TO EDIT DATA";
     }
 
-    $conn = null;
-}
+        $conn = null;
+
 
 }

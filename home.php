@@ -65,6 +65,12 @@ require("inc/functions.php");
   </div>
 <?php }?>
 
+<?php if(isset($_REQUEST['edit'])){?> 
+  <div class="alert alert-success p-1 text-center">
+    <p>Your article has been editted successfully</p>
+  </div>
+<?php }?>
+
 <?php if(isset($_REQUEST['delete'])){?> 
   <div class="alert alert-success p-1 text-center">
     <p>Your article has been deleted successfully</p>

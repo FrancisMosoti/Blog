@@ -26,7 +26,7 @@ session_start();
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <input type="text" placeholder="Blog title" name="title" class="form-control bg-light my-3 p-3">
             <textarea name="content" placeholder="Type your content body" id="" cols="20" rows="10" class="form-control bg-light my-5 p-4"></textarea>
-            <button class="btn btn-outline-success">Add Post</button>
+            <button name="submit" class="btn btn-outline-success">Add Post</button>
         </form>
     </div>
 

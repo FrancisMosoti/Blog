@@ -26,9 +26,9 @@
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
 
         <?php foreach($results as $text){?>
-            <input type="text" placeholder="Blog title" value="<?php echo $text['title']; ?>" name="title" class="form-control bg-light my-3 p-3">
-            <textarea name="content" value="<?php echo $text['body']; ?>" placeholder="Type your content body" id="" cols="20" rows="10" class="form-control bg-light my-5 p-4"></textarea>
-            <button class="btn btn-outline-success">Done!</button>
+            <input type="text" placeholder="Blog title" value="<?php echo $text['title']; ?>" name="tit" class="form-control bg-light my-3 p-3">
+            <textarea name="cont" value="<?php echo $text['body']; ?>" placeholder="Type your content body" id="" cols="20" rows="10" class="form-control bg-light my-5 p-4"></textarea>
+            <button name="Done" class="btn btn-outline-success">Done!</button>
             <?php }?>
         </form>
     </div>

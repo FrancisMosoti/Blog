@@ -55,27 +55,27 @@ if(isset($_SESSION['user'])){
             <!-- <?php var_dump($errors); ?>  -->
                 <div class="form-group mb-3">
                     <input type="text" name="name" class="form-control name" placeholder="Enter Name">
-                    <!-- <?php if(!empty($errors['name']) || ISSET($errors['name'])){
+                    <?php if(!empty($errors['name']) || ISSET($errors['name'])){
                         echo "<p class='text-danger'>".$errors['name'].'</p>';
                         $errors['name'] = ""; 
                         }
-                        ?> -->
+                        ?>
                 </div>
                 <div class="form-group mb-3">
                     <input type="text" name="email" class="form-control email" placeholder="Enter Email">
-                    <!-- <?php if(!empty($errors['email'])){echo "<p class='text-danger'>".$errors['email'].'</p>'; }?> -->
+                    <?php if(!empty($errors['email'])){echo "<p class='text-danger'>".$errors['email'].'</p>'; }?>
                 </div>
                 <div class="form-group mb-3">
                     <input type="text" name="phone" class="form-control phone" placeholder="Phone Number">
-                    <!-- <?php if(!empty($errors['phone'])){echo "<p class='text-danger'>".$errors['phone'].'</p>'; }?> -->
+                    <?php if(!empty($errors['phone'])){echo "<p class='text-danger'>".$errors['phone'].'</p>'; }?>
                 </div>
                 <div class="form-group mb-3">
                     <input type="password" name="password" class="form-control password" placeholder="Enter Password">
-                    <!-- <?php if(!empty($errors['password'])){echo "<p class='text-danger'>".$errors['password'].'</p>'; }?> -->
+                    <?php if(!empty($errors['password'])){echo "<p class='text-danger'>".$errors['password'].'</p>'; }?>
                 </div>
                 <div class="form-group mb-3">
                     <input type="password" name="password1" class="form-control password1" placeholder="Confirm Password">
-                    <!-- <?php if(!empty($errors['password1'])){echo "<p class='text-danger'>".$errors['password1'].'</p>'; }?> -->
+                    <?php if(!empty($errors['password1'])){echo "<p class='text-danger'>".$errors['password1'].'</p>'; }?>
                 </div>
                 <div class="form-group mb-3">
                     <label for="">
